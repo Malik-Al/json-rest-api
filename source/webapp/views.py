@@ -9,6 +9,7 @@ def json_echo_view(request, *args, **kwargs):
     data = None
     if request.body:
         data = json.loads(request.body)
+    print(data.get('key'))    # вывести ключ key
     answer = {
         'time': datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
         'method': request.method,
